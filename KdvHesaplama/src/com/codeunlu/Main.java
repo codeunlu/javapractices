@@ -8,7 +8,13 @@ public class Main {
         Scanner moneyScanner = new Scanner(System.in);
         System.out.println("Para tutarını giriniz: ");
         double money = moneyScanner.nextDouble();
-        double kdv = 0.18;
+        double kdv;
+
+        if(money > 0 && money <= 1000){
+            kdv = 0.18;
+        }else{
+            kdv = 0.08;
+        }
 
         System.out.println("Kdv'siz Fiyat: " + money);
         System.out.println("Kdv'li Fiyat: " + (money * kdv + money));
